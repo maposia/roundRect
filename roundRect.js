@@ -6,15 +6,22 @@
 
   "use strict";
 
-  Path2D.prototype.roundRect ??= roundRect;
-  if (globalThis.CanvasRenderingContext2D) {
+  if(Path2D.prototype.roundRect === null || Path2D.prototype.roundRect === undefined){
+      Path2D.prototype.roundRect = roundRect;
+  }
 
-    globalThis.CanvasRenderingContext2D.prototype.roundRect ??= roundRect;
+  if (globalThis.CanvasRenderingContext2D && 
+      (globalThis.CanvasRenderingContext2D.prototype.roundRect === null ||
+       globalThis.CanvasRenderingContext2D.prototype.roundRect === undefined)) {
+
+    globalThis.CanvasRenderingContext2D.prototype.roundRect = roundRect;
 
   }
-  if (globalThis.OffscreenCanvasRenderingContext2D) {
+  if (globalThis.OffscreenCanvasRenderingContext2D &&
+      (globalThis.OffscreenCanvasRenderingContext2D.prototype.roundRect === null ||
+       globalThis.OffscreenCanvasRenderingContext2D.prototype.roundRect === undefined)) {
 
-    globalThis.OffscreenCanvasRenderingContext2D.prototype.roundRect ??= roundRect;
+    globalThis.OffscreenCanvasRenderingContext2D.prototype.roundRect = roundRect;
 
   }
 

@@ -1,5 +1,5 @@
 {
-  "name": "canvas-roundrect-polyfill",
+  "name": "@maposia/canvas-roundrect-polyfill",
   "version": "0.0.1",
   "description": "CanvasRenderingContext2D.roundRect() and Path2D.roundRect() polyfill",
   "main": "roundRect.js",
